@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8" />
+                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Trick</title>
+                <style>
+                    body {
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 100vh;
+                        background-color: #292929;
+                    }
+
+                    .container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .content {
+                        text-align: center;
+                        max-width: 600px;
+                        padding: 20px;
+                        background-color: #333;
+                        color: #fff;
+                        border-radius: 5px;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <div class="content">
+                        <div id="inner"></div>
+                    </div>
+                </div>
+                <script>
+                    let ages = 0;
+                    let somaIdade = 0;
+                    let numberStudents = 0;
+
+                    while (ages != 999) {
+                        ages = parseInt(prompt("Enter an age (or 999 to exit)"));
+                        if (ages != 999) {
+                            somaIdade += ages;
+                            numberStudents++;
+                        }
+                    }
+                    let averageAge = somaIdade / numberStudents;
+
+                    inner.innerHTML = `<h3>The class has ${numberStudents} students and the average age is ${parseInt(
+                        averageAge
+                    )} years.`;
+                </script>
+                <!-- 1. Faça um algoritmo que leia a idade de vários alunos de uma turma.
+                O programa vai parar quando for digitada a idade 999. No final,
+                mostre quantos alunos existem na turma e qual é a média de idade
+                do grupo. -->
+            </body>
+        </html>
+    </body>
+</html>

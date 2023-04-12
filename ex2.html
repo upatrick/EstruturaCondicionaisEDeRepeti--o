@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8" />
+                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Trick</title>
+                <style>
+                    body {
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 100vh;
+                        background-color: #292929;
+                    }
+
+                    .container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .content {
+                        text-align: center;
+                        max-width: 600px;
+                        padding: 20px;
+                        background-color: #333;
+                        color: #fff;
+                        border-radius: 5px;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <div class="content">
+                        <div id="inner">
+                            <label for="salario">Salário:</label>
+                            <input type="number" id="salario" />
+                            <br />
+                            <label for="sexo">Sexo:</label>
+                            <select id="sexo">
+                                <option value="m">Masculino</option>
+                                <option value="f">Feminino</option>
+                            </select>
+                            <br /><br />
+                            <button onclick="adicionarFuncionario()">
+                                Adicionar Funcionário
+                            </button>
+                            <br /><br />
+                            <button onclick="calcularTotais()">Calcular Totais</button>
+                            <br />
+                            <br />
+                            <div id="resultados"></div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    let stopp = "";
+                    let salaryM = 0;
+                    let salaryF = 0;
+
+                    function adicionarFuncionario() {
+                        let salary = parseFloat(document.getElementById("salario").value);
+                        let gender = document.getElementById("sexo").value;
+
+                        if (gender == "m") {
+                            salaryM += salary;
+                        } else if (gender == "f") {
+                            salaryF += salary;
+                        } else {
+                            alert("Incorrect gender!");
+                        }
+                    }
+
+                    // while (stopp != "n") {
+                    //     let salary = parseFloat(document.getElementById("salario").value);
+                    //     let gender = document.getElementById("sexo").value;
+                    //     stopp = prompt("Do you want to continue adding? (s/n)");
+
+                    //     if (gender == "m") {
+                    //         salaryM += salary;
+                    //     } else if (gender == "f") {
+                    //         salaryF += salary;
+                    //     } else {
+                    //         alert("Incorrect gender!");
+                    //     }
+                    // }
+
+                    function calcularTotais() {
+                        const resultados = document.getElementById("resultados");
+
+                        resultados.innerHTML = `<h3>Total salary paid to men R$${salaryM.toFixed(
+                            2
+                        )}. <br> Total salary paid to woman 
+                        R$${salaryF.toFixed(2)}.`;
+                    }
+                </script>
+                <!-- 2. Desenvolva um aplicativo que leia o salário e o sexo de vários
+                funcionários. No final, mostre o total de salários pagos aos homens e
+                o total pago às mulheres. O programa vai perguntar ao usuário se
+                ele quer continuar ou não sempre que ler os dados de um
+                funcionário. -->
+            </body>
+        </html>
+    </body>
+</html>
