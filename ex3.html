@@ -49,22 +49,14 @@
                     </div>
                 </div>
                 <script>
-                    let ages = 0;
-                    let somaIdade = 0;
-                    let quantidadeAlunos = 0;
-
-                    while (ages !== 999) {
-                        ages = parseInt(prompt("Insira uma idade (ou 999 para sair)"));
-                        if (ages != 999) {
-                            somaIdade += ages;
-                            quantidadeAlunos++;
-                        }
+                    function start() {
+                        let init = parseInt(document.getElementById("init").value);
+                        let final = parseInt(document.getElementById("final").value);
+                        let increment = parseInt(
+                            document.getElementById("increment").value
+                        );
+                        let result = "";
                     }
-                    let mediaIdade = somaIdade / quantidadeAlunos;
-
-                    inner.innerHTML = `<h3>A turma possui ${quantidadeAlunos} alunos e a média de idade é ${mediaIdade.toFixed(
-                        2
-                    )} anos.`;
                 </script>
                 <!-- 3. Crie um algoritmo que leia o valor inicial da contagem, o valor final e
                 o incremento, mostrando em seguida todos os valores no intervalo:
