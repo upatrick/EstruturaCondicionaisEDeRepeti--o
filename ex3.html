@@ -60,6 +60,8 @@
                         for (let i = init; i <= final; i += increment) {
                             result += ` ${i},`;
                         }
+
+                        inner.innerHTML = `${result.slice(0, -1)} e Acabou!`;
                     }
                 </script>
                 <!-- 3. Crie um algoritmo que leia o valor inicial da contagem, o valor final e
