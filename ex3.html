@@ -43,11 +43,20 @@
                 </style>
             </head>
             <body>
-                <div class="container">
-                    <div class="content">
-                        <div id="inner"></div>
-                    </div>
+                <div class="inputBox">
+                    <input type="text" required="required" id="init" />
+                    <span>Starting value</span>
                 </div>
+                <div class="inputBox">
+                    <input type="text" required="required" id="final" />
+                    <span>Final value</span>
+                </div>
+                <div class="inputBox">
+                    <input type="text" required="required" id="increment" />
+                    <span>Increment</span>
+                </div>
+                <button onclick="start()">HAHAHA</button>
+                <div class="inputBox" id="inner"></div>
                 <script>
                     function start() {
                         let init = parseInt(document.getElementById("init").value);
