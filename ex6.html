@@ -15,57 +15,146 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>Trick</title>
                 <style>
-                    body {
+                    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+                    * {
                         margin: 0;
                         padding: 0;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        height: 100vh;
-                        background-color: #292929;
+                        box-sizing: border-box;
+                        font-family: "poppins", sans-serif;
                     }
 
-                    .container {
+                    body {
                         display: flex;
-                        align-items: center;
                         justify-content: center;
+                        align-items: center;
+                        min-height: 100vh;
+                        flex-direction: column;
+                        gap: 30px;
+                        background: #1d2b3a;
                     }
 
-                    .content {
-                        text-align: center;
-                        max-width: 600px;
-                        padding: 20px;
-                        background-color: #333;
-                        color: #fff;
+                    .inputBox {
+                        position: relative;
+                    }
+
+                    .inputBox input {
+                        width: 100%;
+                        padding: 10px;
+                        border: 1px solid rgba(255, 255, 255, 0.25);
+                        background: #1d2b3a;
                         border-radius: 5px;
-                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                        outline: none;
+                        color: #fff;
+                        font-size: 1m;
+                    }
+
+                    .inputBox span {
+                        position: absolute;
+                        left: 0;
+                        padding: 10px;
+                        pointer-events: none;
+                        font-size: 1em;
+                        color: rgba(255, 255, 255, 0.25);
+                        text-transform: uppercase;
+                        transition: 0.5s;
+                    }
+
+                    .inputBox input:valid ~ span,
+                    .inputBox input:focus ~ span {
+                        color: #00dfc4;
+                        transform: translateX(10px) translateY(-7px);
+                        font-size: 0.65em;
+                        padding: 0 10px;
+                        background: #1d2b3a;
+                        border-left: 1px solid #00dfc4;
+                        border-right: 1px solid #00dfc4;
+                        letter-spacing: 0.2em;
+                    }
+
+                    button {
+                        position: relative;
+                        background: #fff;
+                        color: #fff;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        font-size: 1.5em;
+                        letter-spacing: 0.1m;
+                        font-weight: 400;
+                        padding: 10px 30px;
+                        transition: 0.5s;
+                    }
+
+                    button:hover {
+                        background: var(--clr);
+                        color: var(--clr);
+                        letter-spacing: 0.25em;
+                        box-shadow: 0 0 35px var(--clr);
+                    }
+
+                    button:before {
+                        content: "";
+                        position: absolute;
+                        inset: 2px;
+                        background: #1d2b3a;
+                    }
+
+                    button span {
+                        position: relative;
+                        z-index: 1;
+                    }
+
+                    button i {
+                        position: absolute;
+                        inset: 0;
+                        display: block;
+                    }
+
+                    button i:before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 80%;
+                        width: 10px;
+                        height: 4px;
+                        background: #1d2b3a;
+                        transform: translateX(-50%) skewX(325deg);
+                        transition: 0.5s;
+                    }
+
+                    button:hover i:before {
+                        width: 20px;
+                        left: 20%;
+                    }
+
+                    button i:after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 20%;
+                        width: 10px;
+                        height: 4px;
+                        background: #1d2b3a;
+                        transform: translateX(-50%) skew(325deg);
+                        transition: 0.5s;
+                    }
+
+                    button:hover i:after {
+                        width: 20px;
+                        left: 80%;
                     }
                 </style>
             </head>
             <body>
-                <div class="container">
-                    <div class="content">
-                        <div id="inner"></div>
-                    </div>
+                <div class="inputBox">
+                    <input type="text" required="required" id="increment" />
+                    <span>Increment</span>
                 </div>
-                <script>
-                    let ages = 0;
-                    let somaIdade = 0;
-                    let quantidadeAlunos = 0;
-
-                    while (ages !== 999) {
-                        ages = parseInt(prompt("Insira uma idade (ou 999 para sair)"));
-                        if (ages != 999) {
-                            somaIdade += ages;
-                            quantidadeAlunos++;
-                        }
-                    }
-                    let mediaIdade = somaIdade / quantidadeAlunos;
-
-                    inner.innerHTML = `<h3>A turma possui ${quantidadeAlunos} alunos e a média de idade é ${mediaIdade.toFixed(
-                        2
-                    )} anos.`;
-                </script>
+                <button onclick="percorrer()" style="--clr: #1e9bff">
+                    <span>Go through</span><i></i>
+                </button>
+                <div class="inputBox" id="inner"></div>
+                <script></script>
                 <!-- 6. Faça um programa que leia a largura e o comprimento de um
                 terreno retangular, calculando e mostrando a sua área em m2. O
                 programa também deve mostrar a classificação desse terreno, de
