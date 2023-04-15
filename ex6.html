@@ -147,14 +147,37 @@
             </head>
             <body>
                 <div class="inputBox">
-                    <input type="text" required="required" id="increment" />
-                    <span>Increment</span>
+                    <input type="text" required="required" id="width" />
+                    <span>Width</span>
                 </div>
+                <div class="inputBox">
+                    <input type="text" required="required" id="length" />
+                    <span>Length</span>
+                </div>
+                <div class="inputBox" id="inner" style="color: #fff;"></div>
                 <button onclick="percorrer()" style="--clr: #1e9bff">
                     <span>Go through</span><i></i>
                 </button>
-                <div class="inputBox" id="inner"></div>
-                <script></script>
+                <script>
+                    function percorrer() {
+                        const width = parseFloat(document.getElementById("width").value);
+                        const length = parseFloat(document.getElementById("length").value);
+    
+                        const area = width * length;
+    
+                        let rating = ""
+    
+                        if (area < 100) {
+                        rating = "Popular land";
+                        } else if (area >= 100 && area <= 500) {
+                        rating = "Master land";
+                        } else {
+                        rating = "Vip land";
+                        }
+    
+                        inner.innerHTML = `<h3>The land classification is ${rating}.`     
+                    }
+                </script>
                 <!-- 6. Faça um programa que leia a largura e o comprimento de um
                 terreno retangular, calculando e mostrando a sua área em m2. O
                 programa também deve mostrar a classificação desse terreno, de
