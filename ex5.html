@@ -191,18 +191,35 @@
                         width: 20px;
                         left: 80%;
                     }
+                    div{
+                        color: white;
+                    }
                 </style>
             </head>
             <body>
                 <div class="inputBox">
-                    <input type="text" required="required" id="increment" />
+                    <input type="text" required="required" id="sexo" />
                     <span>Increment</span>
                 </div>
+                <div class="inputBox" id="inner"></div>
                 <button onclick="percorrer()" style="--clr: #1e9bff">
                     <span>Go through</span><i></i>
                 </button>
-                <div class="inputBox" id="inner"></div>
-                <script></script>
+                <script>
+                    function percorrer() {
+                        let distance = parseInt(document.getElementById("sexo").value);
+                        let price = 0
+
+                        if(distance <= 200){
+                            price = distance * 0.5
+                        } else {
+                            price = distance * 0.45;
+                        }
+                        
+                        inner.innerHTML = `<h3> Valor da passagem: R$${price}`
+
+                    }
+                </script>
                 <!-- 5. Faça um algoritmo que pergunte a distância que um passageiro deseja
                 percorrer em Km. Calcule o preço da passagem, cobrando R$0.50 por Km para
                 viagens até 200Km e R$0.45 para viagens mais longas. -->

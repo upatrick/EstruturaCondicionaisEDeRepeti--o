@@ -172,10 +172,12 @@
                         let saleM = price - discountM
                         let saleF = price - discountF
 
-                        if(gender == "m")
+                        if(gender.toUpperCase == "M")
                         inner.innerHTML = `<h3>${name} Parabéns pela compra com desconto!  Você recebeu: 
                         um de desconto R$${discountM} , pagando um valor total de R$${saleM}.`
-                        
+                        else
+                        inner.innerHTML = `<h3>${name} Parabéns pela compra com desconto!  Você recebeu: 
+                        um de desconto R$${discountF} , pagando um valor total de R$${saleF}.`
                     }
                 </script>
                 <!-- 4. Numa promoção exclusiva para o Dia da Mulher, uma loja quer dar
