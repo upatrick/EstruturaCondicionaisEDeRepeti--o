@@ -160,11 +160,9 @@
                 </button>
                 <script>
                     function percorrer() {
-                        const width = parseFloat(document.getElementById("width").value);
-                        const length = parseFloat(document.getElementById("length").value);
-    
-                        const area = width * length;
-    
+                        let width = parseFloat(document.getElementById("width").value);
+                        let length = parseFloat(document.getElementById("length").value);   
+                        let area = width * length;    
                         let rating = ""
     
                         if (area < 100) {
