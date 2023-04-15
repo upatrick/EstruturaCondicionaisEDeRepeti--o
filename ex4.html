@@ -147,14 +147,37 @@
             </head>
             <body>
                 <div class="inputBox">
-                    <input type="text" required="required" id="increment" />
-                    <span>Increment</span>
+                    <input type="text" required="required" id="name" />
+                    <span>Name</span>
                 </div>
+                <div class="inputBox">
+                    <input type="text" required="required" id="gender" />
+                    <span>Gender m/f</span>
+                </div>
+                <div class="inputBox">
+                    <input type="text" required="required" id="price" />
+                    <span>Price</span>
+                </div>
+                <div class="inputBox" id="inner" style="color: azure;"></div>
                 <button onclick="percorrer()" style="--clr: #1e9bff">
                     <span>Go through</span><i></i>
                 </button>
-                <div class="inputBox" id="inner"></div>
-                <script></script>
+                <script>
+                    function percorrer() {
+                        let name = document.getElementById("name").value;
+                        let gender = document.getElementById("gender").value;
+                        let price = document.getElementById("price").value;
+                        let discountF = (price * 5) / 100 
+                        let discountM = (price * 13) / 100
+                        let saleM = price - discountM
+                        let saleF = price - discountF
+
+                        if(gender == "m")
+                        inner.innerHTML = `<h3>${name} Parabéns pela compra com desconto!  Você recebeu: 
+                        um de desconto R$${discountM} , pagando um valor total de R$${saleM}.`
+                        
+                    }
+                </script>
                 <!-- 4. Numa promoção exclusiva para o Dia da Mulher, uma loja quer dar
                 descontos para todos, mas especialmente para mulheres. Faça um programa
                 que leia nome, sexo e o valor das compras do cliente e calcule o preço com
